@@ -12,6 +12,8 @@ jobs:
       - name: Download Risc0
         run: |
           curl -L https://risczero.com/install | bash
+          echo "/home/runner/.risc0/bin" >> $GITHUB_PATH
+          export PATH="/home/runner/.risc0/bin:$PATH"
       - name: Install Risc0
         run: /home/runner/.risc0/bin/rzup install
       - name: Check out
