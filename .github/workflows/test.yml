@@ -15,13 +15,13 @@ jobs:
           echo "/home/runner/.risc0/bin" >> $GITHUB_PATH
           export PATH="/home/runner/.risc0/bin:$PATH"
       - name: Install Risc0
-        run: /home/runner/.risc0/bin/rzup install
+        run: rzup install
       - name: Check out
         uses: actions/checkout@v4
         with:
+          ref: release-1.2
           repository: risc0/risc0
       - name: Test
         working-directory: examples/wasm
         run: |
-          ls .
           cargo run --release
