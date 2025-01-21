@@ -21,5 +21,7 @@ jobs:
         with:
           repository: risc0/risc0
       - name: Test
+        working-directory: examples/wasm
         run: |
+          ls .
           cargo run --release
