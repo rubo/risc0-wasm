@@ -12,8 +12,10 @@ jobs:
       - name: Download Risc0
         run: |
           curl -L https://risczero.com/install | bash
+          . /home/runner/.bashrc
           source ~/.bashrc
-          rzup install
+      - name: Install Risc0
+        run: rzup install
       - name: Check out
         uses: actions/checkout@v4
         with:
