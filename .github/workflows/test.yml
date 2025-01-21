@@ -10,9 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download Risc0
-        run: curl -L https://risczero.com/install | bash
-      - name: Install Risc0
-        run: rzup install
+        run: |
+          curl -L https://risczero.com/install | bash
+          . /home/runner/.bashrc
+          rzup install
       - name: Check out
         uses: actions/checkout@v4
         with:
