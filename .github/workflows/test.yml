@@ -1,0 +1,22 @@
+name: test-wasm
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Risc0
+        run: |
+          curl -L https://risczero.com/install | bash
+          rzup install
+      - name: Check out
+        uses: actions/checkout@v4
+        with:
+          repository: risc0/risc0
+      - name: Test
+        run: |
+          cargo run --release
