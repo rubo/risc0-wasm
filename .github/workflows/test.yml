@@ -20,8 +20,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: release-1.2
-          repository: risc0/risc0
+          repository: rubo/risc0
       - name: Test
         working-directory: examples/wasm
         run: |
-          cargo run --release
+          cargo run --release -- ./TestApp.wasm
