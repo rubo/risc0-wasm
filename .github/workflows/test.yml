@@ -24,4 +24,4 @@ jobs:
       - name: Test
         working-directory: examples/wasm
         run: |
-          cargo run --release -- ./unbundled-module0.wasm
+          cargo run --release -- ./TestApp.wasm
